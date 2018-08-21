@@ -76,6 +76,6 @@ func SendeMessage(data []byte) {
 			return
 		}
 
-		dlog.Debug(resp,res.StatusCode)
+		dlog.Debug(string(resp),res.StatusCode)
 	}
 }
