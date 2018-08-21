@@ -64,7 +64,7 @@ falcon-log-agent是一个开源版的日志采集工具，旨在从流式的日�
 **构建**
 ```
 go get https://github.com/didi/falcon-log-agent.git && cd $GOPATH:/src/github.com/didi/falcon-log-agent
-make build
+./control build
 ```
 
 **修改配置文件**
@@ -80,7 +80,7 @@ vim cfg/strategy.json
 
 **打包 & 安装**
 ```
-make pack
+./control pack
 export WorkDir="$HOME/falcon-log-agent"
 mkdir -p $WorkDir
 tar -xzvf falcon-log-agent.tar.gz -C $WorkDir

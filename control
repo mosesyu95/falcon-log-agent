@@ -7,7 +7,7 @@ app=falcon-$module
 conf=cfg/cfg.json
 strategyconf=cfg/strategy.json
 pidfile=var/app.pid
-logfile=log/app.log
+logfile=var/app.log
 
 mkdir -p var &>/dev/null
 mkdir -p log &>/dev/null
@@ -95,6 +95,24 @@ function check_pid() {
     return 0
 }
 
+function tailf() {
+    tail -f $logfile
+}
+
+function build() {
+    go build -ldflags "-X main.GitCommit=`git rev-parse --short HEAD`" -o $(TARGET)
+    if [ $? -ne 0 ]; then
+        exit $?
+    fi
+}
+
+function pack() {
+    build
+    file_list="	./falcon-log-agent cfg/ control"
+    echo "...tar $app.tar.gz <= $file_list"
+    tar zcf $app.tar.gz gitversion $file_list
+}
+
 action=$1
 case $action in
     "start" )
@@ -108,5 +126,14 @@ case $action in
         ;;
     "status" )
         status
+        ;;
+    "tail" )
+        tailf
+        ;;
+    "build" )
+        build
+        ;;
+    "pack" )
+        pack
         ;;
 esac

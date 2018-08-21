@@ -50,7 +50,7 @@ func Conf() *Config {
 }
 
 var (
-	cfg        = flag.String("c", "./cfg/dev.cfg", "specify config file")
+	cfg        = flag.String("c", "./cfg/cfg.json", "specify config file")
 	ConfigFile string
 	config     *Config
 	configLock = new(sync.RWMutex)

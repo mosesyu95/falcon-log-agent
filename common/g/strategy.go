@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	strategyCfg  = flag.String("s", "cfg/strategy.dev.json", "specify strategy json file")
+	strategyCfg  = flag.String("s", "cfg/strategy.json", "specify strategy json file")
 	StrategyFile string
 )
 
