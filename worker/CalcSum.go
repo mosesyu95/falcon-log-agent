@@ -21,6 +21,7 @@ func PostToUrl(){
 	g.Sum_Lock.Lock()
 	defer g.Sum_Lock.Unlock()
 	bo ,err := json.Marshal(g.Sum_map)
+	g.InitSum()
 	if err != nil {
 		log.Print(err)
 	}

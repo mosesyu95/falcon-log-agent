@@ -36,6 +36,7 @@ type workerConfig struct {
 
 type CalcSum struct {
 	Enable		bool	`json:"enable"`
+	Tag		 	string	`json:"tag"`
 	Delimiter 	string	`json:"delimiter"`
 	ArrLocation	int		`json:"arr_location"`
 	SumPushUrl	string	`json:"sum_push_url"`

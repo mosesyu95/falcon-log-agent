@@ -20,6 +20,7 @@
     },
     "calc_sum" : {
         "enable"    :  true,
+        "tag" : "jr.jiayuan.com",
         "delimiter" : "\"",
         "arr_location" :1 ,
         "sum_push_url": "http://127.0.0.1:980/v1/push"
