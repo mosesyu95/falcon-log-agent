@@ -18,10 +18,10 @@ func CalcSumStart(){
 }
 
 func PostToUrl(){
-	Sum_Lock.Lock()
-	defer Sum_Lock.Unlock()
-	body ,_ := json.Marshal(g.Sum_map)
-	log.Print(body)
+	g.Sum_Lock.Lock()
+	defer g.Sum_Lock.Unlock()
+	bo ,_ := json.Marshal(g.Sum_map)
+	log.Print(bo)
 }
 
 func CalcSum(line string){

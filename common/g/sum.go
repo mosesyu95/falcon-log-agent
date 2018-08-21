@@ -21,5 +21,3 @@ func Sumadd(ip string){
 	Sum_map[ip] = 1
 	return
 }
-
-def
