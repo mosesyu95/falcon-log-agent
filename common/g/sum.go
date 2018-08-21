@@ -6,6 +6,7 @@ var Sum_map map[string]int
 var Sum_Lock *sync.RWMutex
 
 func InitSum(){
+	Sum_Lock = new(sync.RWMutex)
 	Sum_map = make(map[string]int,0)
 }
 
