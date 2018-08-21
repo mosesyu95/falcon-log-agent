@@ -1,7 +1,7 @@
 {
     "log" : {
         "log_path" : "./var",
-        "log_level" : "INFO",
+        "log_level" : "DEBUG",
         "log_rotate_size" : 200,
         "log_rotate_num" : 10
     },

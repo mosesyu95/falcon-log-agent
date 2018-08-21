@@ -28,7 +28,7 @@ func CalcSumStart(){
 func PostToUrl(){
 	g.Sum_map_data.Lock()
 	defer g.Sum_map_data.Unlock()
-	bo ,err := json.Marshal(&post_data{
+	bo ,err := json.Marshal(post_data{
 		Tag:g.Conf().CalcSum.Tag,
 		Counter:g.Sum_map_data.Counter})
 	g.InitSum()
