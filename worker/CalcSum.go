@@ -2,13 +2,21 @@ package worker
 
 import (
 	"github.com/didi/falcon-log-agent/common/g"
+	"github.com/didi/falcon-log-agent/common/dlog"
 	"regexp"
 	"github.com/toolkits/net"
 	"strings"
 	"time"
 	"encoding/json"
-	"log"
+	"bytes"
+	"net/http"
+	"io/ioutil"
 )
+
+type post_data struct {
+	Tag	string `json:"tag"`
+	Counter map[string]int `json:"counter"`
+}
 
 func CalcSumStart(){
 	for {
@@ -20,12 +28,15 @@ func CalcSumStart(){
 func PostToUrl(){
 	g.Sum_map_data.Lock()
 	defer g.Sum_map_data.Unlock()
-	bo ,err := json.Marshal(g.Sum_map_data.Counter)
+	bo ,err := json.Marshal(&post_data{
+		Tag:g.Conf().CalcSum.Tag,
+		Counter:g.Sum_map_data.Counter})
 	g.InitSum()
 	if err != nil {
-		log.Print(err)
+		dlog.Error(err)
 	}
-	log.Print(string(bo))
+	SendeMessage(bo)
+	dlog.Debug(string(bo))
 }
 
 func CalcSum(line string){
@@ -48,4 +59,23 @@ func IsIP(ip string)bool{
 		return true
 	}
 	return false
+}
+
+func SendeMessage(data []byte) {
+	body := bytes.NewBuffer(data)
+	res, err := http.Post(g.Conf().CalcSum.SumPushUrl, "application/json;charset=utf-8", body)
+	if err != nil {
+		dlog.Error("post data err ! ", err)
+		return
+	}
+	if res.StatusCode != 200 {
+		_, err := ioutil.ReadAll(res.Body)
+		res.Body.Close()
+		if err != nil {
+			dlog.Error(err)
+			return
+		}
+		dlog.Debug(res.StatusCode)
+	}
+	dlog.Debug(string(data))
 }

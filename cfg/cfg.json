@@ -23,7 +23,7 @@
         "tag" : "jr.jiayuan.com",
         "delimiter" : "\"",
         "arr_location" :1 ,
-        "sum_push_url": "http://127.0.0.1:980/v1/push"
+        "sum_push_url": "http://10.0.5.205:8080/devops/sumapi/"
     },
     "max_cpu_rate": 0.2,
     "max_mem_rate": 0.05
