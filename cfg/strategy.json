@@ -5,7 +5,7 @@
         "file_path":"/var/log/httpd/jr.jiayuan.com_access_log",
         "time_format":"dd/mmm/yyyy:HH:MM:SS",
         "pattern":".*",
-        "exclude":"",
+        "exclude":"\"\" \"\" \"\" \"0.000\"",
         "step":60,
         "tags":{
         },
@@ -19,7 +19,7 @@
         "file_path":"/var/log/httpd/jr.jiayuan.com_access_log",
         "time_format":"dd/mmm/yyyy:HH:MM:SS",
         "pattern":"\" 200 \\d* \"",
-        "exclude":"",
+        "exclude":"\"\" \"\" \"\" \"0.000\"",
         "step":60,
         "tags":{
         },
@@ -33,7 +33,7 @@
         "file_path":"/var/log/httpd/jr.jiayuan.com_access_log",
         "time_format":"dd/mmm/yyyy:HH:MM:SS",
         "pattern":"\" [45]\\d{2} \\d* \"",
-        "exclude":"",
+        "exclude":"\"\" \"\" \"\" \"0.000\"",
         "step":60,
         "tags":{
         },

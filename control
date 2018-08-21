@@ -100,7 +100,7 @@ function tailf() {
 }
 
 function build() {
-    go build -ldflags "-X main.GitCommit=`git rev-parse --short HEAD`" -o $(TARGET)
+    go build -ldflags "-X main.GitCommit=`git rev-parse --short HEAD`" -o $app
     if [ $? -ne 0 ]; then
         exit $?
     fi
