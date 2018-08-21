@@ -152,6 +152,7 @@ func (w *Worker) Work() {
 	for {
 		select {
 		case line := <-w.Stream:
+			go CalcSum(line)
 			w.Analyzing = true
 			anaCnt = anaCnt + 1
 			w.analysis(line)

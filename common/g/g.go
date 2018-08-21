@@ -4,4 +4,5 @@ func InitAll() {
 	InitConfig()
 	InitLog()
 	InitStrategyFile()
+	InitSum()
 }

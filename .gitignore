@@ -8,6 +8,7 @@ log/
 falcon-log-agent
 output/
 .idea/*
+./a.go
 cfg/dev.test.cfg
 cfg/strategy.test.json
 falcon-log-agent.tar.gz

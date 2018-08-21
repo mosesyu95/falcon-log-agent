@@ -110,7 +110,7 @@ function pack() {
     build
     file_list="	./falcon-log-agent cfg/ control"
     echo "...tar $app.tar.gz <= $file_list"
-    tar zcf $app.tar.gz gitversion $file_list
+    tar zcf $app.tar.gz $file_list
 }
 
 action=$1

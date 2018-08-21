@@ -34,6 +34,13 @@ type workerConfig struct {
 	PushURL      string `json:"push_url"`
 }
 
+type CalcSum struct {
+	Enable		bool	`json:"enable"`
+	Delimiter 	string	`json:"delimiter"`
+	ArrLocation	int		`json:"arr_location"`
+	SumPushUrl	string	`json:"sum_push_url"`
+}
+
 type Config struct {
 	Log        logConfig    `json:"log"`
 	Http       httpConfig   `json:"http"`
@@ -41,6 +48,7 @@ type Config struct {
 	Worker     workerConfig `json:"worker"`
 	MaxCPURate float64      `json:"max_cpu_rate"`
 	MaxCPUNum  int          `json:"max_cpu_num"`
+	CalcSum		CalcSum		`json:"calc_sum"`
 	MaxMemRate float64      `json:"max_mem_rate"`
 	MaxMemMB   int          `json:"max_mem_MB"`
 }

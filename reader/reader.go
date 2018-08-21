@@ -7,6 +7,7 @@ import (
 	"github.com/didi/falcon-log-agent/common/proc/metric"
 
 	"github.com/hpcloud/tail"
+	"github.com/didi/falcon-log-agent/worker"
 )
 
 // Reader to read file

@@ -18,6 +18,12 @@
         "push_interval" : 1,
         "push_url" : "http://127.0.0.1:980/v1/push"
     },
+    "calc_sum" : {
+        "enable"    :  true,
+        "delimiter" : "\"", //按行分隔符
+        "arr_location" :1 , // 分隔得到的数列第几个从0开始
+        "sum_push_url": "http://127.0.0.1:980/v1/push"
+    },
     "max_cpu_rate": 0.2,
     "max_mem_rate": 0.05
 }

@@ -26,6 +26,7 @@ func main() {
 	go worker.UpdateConfigsLoop()
 	go patrol.PatrolLoop()
 	go worker.PusherStart()
+	go worker.CalcSumStart()
 
 	http.Start()
 }
