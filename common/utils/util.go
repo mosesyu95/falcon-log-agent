@@ -91,7 +91,6 @@ func LocalHostname() (string, error) {
 		log.Print("Got endpoint error ")
 		os.Exit(1)
 	}
-	log.Print("Got endpoint is ",main_ip)
 	return main_ip, nil
 }
 

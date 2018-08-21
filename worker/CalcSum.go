@@ -20,7 +20,10 @@ func CalcSumStart(){
 func PostToUrl(){
 	g.Sum_Lock.Lock()
 	defer g.Sum_Lock.Unlock()
-	bo ,_ := json.Marshal(g.Sum_map)
+	bo ,err := json.Marshal(g.Sum_map)
+	if err != nil {
+		log.Print(err)
+	}
 	log.Print(bo)
 }
 
