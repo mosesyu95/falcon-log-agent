@@ -69,13 +69,13 @@ func SendeMessage(data []byte) {
 		return
 	}
 	if res.StatusCode != 200 {
-		_, err := ioutil.ReadAll(res.Body)
+		resp, err := ioutil.ReadAll(res.Body)
 		res.Body.Close()
 		if err != nil {
 			dlog.Error(err)
 			return
 		}
-		dlog.Debug(res.StatusCode)
+
+		dlog.Debug(resp,res.StatusCode)
 	}
-	dlog.Debug(string(data))
 }
