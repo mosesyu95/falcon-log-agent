@@ -24,7 +24,7 @@ func PostToUrl(){
 	if err != nil {
 		log.Print(err)
 	}
-	log.Print(bo)
+	log.Print(string(bo))
 }
 
 func CalcSum(line string){
